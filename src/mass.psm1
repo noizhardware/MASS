@@ -48,10 +48,10 @@ function mass-backup ($filename){} #backs up a .MASS file in a timestamped copy
 function mass-makeElement {
   Param(
     [Parameter(Mandatory=$True)]
-    $attributeName
+    $attributeName,
     [Parameter(Mandatory=$False)]
     $blockNum
-    )
+  )
 }
 
 function mass-getBlock {
