@@ -1,6 +1,7 @@
 # M A S S
-_rev.2019D14_
+_rev.2019D21_
 #### A file format that uses human-readable delimiter-separated values to store data in attribute–value pairs.
+###### In the `src` folder you can find a PowerShell parser.
 * Standard file extension is `.MASS`
 * Standard delimiter is `whitespace` or `TAB` (at least one, can be many, if necessary to enhance human-readability)
 * Supports commenting, everything on the right of `//` is a comment `// this is a comment`
