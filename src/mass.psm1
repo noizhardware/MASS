@@ -45,6 +45,15 @@ function mass-addToTOP ($file, $attribute, $value){ # adds an element to the top
 # --------------------------------------
 function mass-backup ($filename){} #backs up a .MASS file in a timestamped copy
 
+function mass-makeElement {
+  Param(
+    [Parameter(Mandatory=$True)]
+    $attributeName
+    [Parameter(Mandatory=$False)]
+    $blockNum
+    )
+}
+
 function mass-getBlock {
   Param(
     [Parameter(Mandatory=$True)]
