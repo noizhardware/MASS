@@ -42,10 +42,33 @@ function mass-addToTOP ($file, $attribute, $value){ # adds an element to the top
   }
 }
 
-function mass-getBlock ($file, $blockNum){}
-function mass-deleteBlock ($file, $blockNum){}
-function mass-deleteElement ($file, $blockNum, ){}
-function mass-swapBlock ($file, $blockNum, $newBlockArray){}
+# --------------------------------------
+function mass-getBlock {
+  Param(
+    [Parameter(Mandatory=$True)]
+    $file, $blockNum
+    )
+}
+function mass-deleteBlock {
+  Param(
+    [Parameter(Mandatory=$True)]
+    $file, $blockNum
+    )
+}
+function mass-deleteElement {
+  Param(
+    [Parameter(Mandatory=$True)]
+    $file, $blockNum, $elemNum
+    )
+}
+function mass-swapBlock {
+ Param(
+   [Parameter(Mandatory=$True)]
+   $file, $blockNum, $elemNum, $newBlockArray
+   )
+}
+# --------------------------------------
+
 
 $global:massElement = $null
 function mass-getLastBlock ($file){
