@@ -8,7 +8,7 @@ _rev.2019D21_
 * Attribute names must NOT contain `whitespace` or `TAB` or `//`.
 * Everything after the first `whitespace` or `TAB` and to the end of each line is the value of the attribute.
 * Lines beginning without `whitespace` or `TAB` are the header of a block.
-* Lines beginning with `whitespace` or `TAB` are contained in the block.
+* Lines beginning with `whitespace` or `TAB` are contained in the parent block.
 * Lines beginning with double or more `whitespace` or `TAB` are multiple values of a common parent attribute, to form a multi-value array.
 * Lines beginning with `.` are multi-element arrays. The following elements must begin with one more tab than the parent to be included in the array.
 * Multi-value and multi-element arrays can be nested indefinitely.
