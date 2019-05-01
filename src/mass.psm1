@@ -42,7 +42,7 @@ function mass-addToTOP ($file, $attribute, $value){ # adds an element to the top
   }
 }
 
-# --------------------------------------
+# -------------------------------------- TO MAKE!!!!
 function mass-backup ($filename){} #backs up a .MASS file in a timestamped copy
 
 function mass-makeElement {
@@ -78,7 +78,7 @@ function mass-swapBlock {
    $file, $blockNum, $elemNum, $newBlockArray
    )
 }
-# --------------------------------------
+# -------------------------------------- TO MAKE!!!! END. (See also "todo")
 
 
 $global:massElement = $null
