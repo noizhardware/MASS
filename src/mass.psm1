@@ -100,7 +100,7 @@ function mass-getTopBlock ($file){
   $i = 0
   $currentline = $filecontents[$i]
   while(!($currentline.StartsWith($global:TAB))){
-    wr("first: $i - $currentline")
+    # wr("first: $i - $currentline")
     $temp = $currentline.Split($global:TAB)[0]
     $topBlock += $temp
     $temp = $currentline.Split($global:TAB)[1]
@@ -109,7 +109,7 @@ function mass-getTopBlock ($file){
     $currentline = ($filecontents[$i])
   }
   while($currentline.StartsWith($global:TAB)){ ### BUG ### this one never triggers
-    wr("second: $i - $currentline")
+    # wr("second: $i - $currentline")
     $currentLine = $currentLine.trim() # gets rid of the TAB at the beginning of the line
     $temp = $currentline.Split($global:TAB)[0]
     $topBlock += $temp
