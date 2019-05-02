@@ -1,7 +1,10 @@
 # M A S S
-_rev.2019D21_
+_rev.2019E02_
 #### A file format that uses human-readable delimiter-separated values to store data in attribute–value pairs.
 ###### In the `src` folder you can find a PowerShell module with functions that act upon the .MASS format.
+##### TODO:
+  * Atom Grammar
+---  
 * Standard file extension is `.MASS`
 * Standard delimiter is `whitespace` or `TAB` (at least one, can be many, if necessary to enhance human-readability)
 * Supports commenting, everything on the right of `//` is a comment `// this is a comment`
