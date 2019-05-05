@@ -12,17 +12,18 @@ function wr ($toscreen){write-output $toscreen}
 # -help
 # implement backup
 # implement comments
-# get X block form the TOP
+# get X block from the TOP
 # get X block from the BOTTOM
 # return block array with the GET functions
 # implement error recognition
 # rendere il tutto piu flessibile e dare la possibilità di definire il numero di elementi su ogni linea, separati da TAB
 # possibilità di addressare uno specifico block, e uno specifico elemento al suo interno. first block from the top = block[0]
+# piu flessibilità, tipo possibilità di creare separatori ulteriori nella parte "value", che vengono hardcodati nel file stesso. supermodular!
 # -------------------
 
 
 
-function mass-initBlock (){ # block initialization
+function mass-initBlock (){ # block initialization - might be rendered useless in future development
   $global:header = 1 # with the HEADER flag = 1, the first element that will be written after this instruction will be an header
 }
 function mass-addToTOP ($file, $attribute, $value){ # adds an element to the top of the file
