@@ -7,8 +7,8 @@ _rev.2019E02_
 ---  
 * Standard file extension is `.MASS`
 * Standard delimiter is `whitespace` or `TAB` (at least one, can be many, if necessary to enhance human-readability)
-* Supports commenting, everything on the right of `//` is a comment `// this is a comment`
-* Attribute names must NOT contain `whitespace` or `TAB` or `//`.
+* Supports commenting, everything on the right of `--` is a comment `-- this is a comment`
+* Attribute names must NOT contain `whitespace` or `TAB` or `--`.
 * Everything after the first `whitespace` or `TAB` and to the end of each line is the value of the attribute.
 * Lines beginning without `whitespace` or `TAB` are the header of a block.
 * Lines beginning with `whitespace` or `TAB` are contained in the parent block.
@@ -21,10 +21,10 @@ _rev.2019E02_
 Examples:
 
 ~~~~
-attributename attributevalue // this is a block header
+attributename attributevalue -- this is a block header
   attributename attributevalue
   attributename attributevalue
-attributename attributevalue // this one too
+attributename attributevalue -- this one too
   attributename attributevalue
 ~~~~
 After adding an element to the top block:
@@ -38,7 +38,7 @@ attributename attributevalue
 ~~~~
 After adding a new block (at the top)
 ~~~~
-newattributename  newattributevalue // first element is set as a block header
+newattributename  newattributevalue -- first element is set as a block header
 attributename attributevalue
   attributename attributevalue
   attributename attributevalue
@@ -70,7 +70,7 @@ customername chthulu
     maincourse  blood and violence
     side        sadism and torture
     dessert     proton decay
-  table           rooftop
-  reservationtime h2100
+  table             rooftop
+  reservationtime   2100
 )
 ~~~~
