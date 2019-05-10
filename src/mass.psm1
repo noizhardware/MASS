@@ -140,10 +140,10 @@ $global:outputstring = $null
 function mass-1tab ($inputstring){ # prepends a TAB to the input string
   $global:outputstring = "$TAB$inputstring"
 }
-function mass-2tab ($inputstring){ # prepends a TAB to the input string
+function mass-2tab ($inputstring){ # prepends 2 TABs to the input string
   $global:outputstring = "$TAB$TAB$inputstring"
 }
-function mass-3tab ($inputstring){ # prepends a TAB to the input string
+function mass-3tab ($inputstring){ # prepends 3 TABs to the input string
   $global:outputstring = "$TAB$TAB$TAB$inputstring"
 }
 # M A S S  functions END.
