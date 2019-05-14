@@ -4,9 +4,12 @@ _rev.2019E13_
 ###### In the `src` folder you can find a PowerShell module with functions that act upon the .MASS format.
 ##### TODO:
   * Atom Grammar
-  * Implement in-file header definition for new user-definer delimiters
+  * Implement in-file header definition for new user-defined delimiters
   * Powershell module:
     - implement comments
+  * make .js parser // array loader
+    - with drag&drop
+    - with address #hash reader
 ---  
 * Standard file extension is `.MASS`
 * Standard delimiter is `whitespace` or `TAB` (at least one, can be many, if necessary to enhance human-readability)
