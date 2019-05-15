@@ -10,6 +10,7 @@ _rev.2019E13_
   * make .js parser // array loader
     - with drag&drop
     - with address #hash reader
+    - direct function value pass
 ---  
 * Standard file extension is `.MASS`
 * Standard delimiter is `whitespace` or `TAB` (at least one, can be many, if necessary to enhance human-readability)
