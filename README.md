@@ -1,5 +1,5 @@
 # M A S S
-_rev.2019E13_
+_rev.2019f05_
 #### A file format that uses human-readable delimiter-separated values to store data in attribute–value pairs.
 ###### In the `src` folder you can find a PowerShell module with functions that act upon the .MASS format.
 ##### TODO:
@@ -16,7 +16,7 @@ _rev.2019E13_
 * Standard delimiter is `whitespace` or `TAB` (at least one, can be many, if necessary to enhance human-readability)
 * Supports commenting, everything on the right of `--` is a comment `-- this is a comment`
 * Attribute names must NOT contain `whitespace` or `TAB` or `--`.
- - Attribute values, on the other hand, can contain anything. The attribute value ends with a `newline` or `-- comment`
+  - Attribute values, on the other hand, can contain anything. The attribute value ends with a `newline` or `-- comment`
 * Everything after the first `whitespace` or `TAB` and to the end of each line is the value of the attribute.
 * Lines beginning without `whitespace` or `TAB` are the header of a block.
 * Lines beginning with `whitespace` or `TAB` are contained in the parent block.
