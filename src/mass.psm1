@@ -8,7 +8,7 @@ $global:outputstring = $null
 function wr ($toscreen){write-output $toscreen}
 
 # M A S S  functions
-# todo:--------------
+# TODO:--------------
 # -help
 # implement backup
 # implement comments
@@ -19,6 +19,7 @@ function wr ($toscreen){write-output $toscreen}
 # rendere il tutto piu flessibile e dare la possibilità di definire il numero di elementi su ogni linea, separati da TAB
 # possibilità di addressare uno specifico block, e uno specifico elemento al suo interno. first block from the top = block[0]
 # piu flessibilità, tipo possibilità di creare separatori ulteriori nella parte "value", che vengono hardcodati nel file stesso. supermodular!
+# mettere ignore per javascript header
 # -------------------
 
 
