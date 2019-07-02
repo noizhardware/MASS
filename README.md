@@ -13,7 +13,8 @@ _rev.2019g01_
     - direct function value pass
 ---  
 * Standard file extension is `.MASS`
-* Standard delimiter is `whitespace` or `TAB` (at least one, can be many, if necessary to enhance human-readability)
+* Standard delimiter is `whitespace` or `TAB` (at least one, can be many, if necessary to enhance human-readability)ù
+  - I recommend using two `whitespace`, it keeps things tidy as a `TAB`, but is universally typable (it's difficult, if not impossible, to type a `TAB` on Android, for example)
 * Supports commenting, everything on the right of `--` is a comment `-- this is a comment`
 * Attribute names must NOT contain `whitespace` or `TAB` or `--`.
   - Attribute values, on the other hand, can contain anything. The attribute value ends with a `newline` or `-- comment`. An actual comment after the `--` is optional.
@@ -29,43 +30,43 @@ _Examples:_
 
 ~~~~
 attributename attributevalue -- this is a block header
-  attributename attributevalue
-  attributename attributevalue
-attributename attributevalue -- this one too
-  attributename attributevalue
+  attributename  attributevalue
+  attributename  attributevalue
+attributename  attributevalue -- this one too
+  attributename  attributevalue
 ~~~~
 After adding an element to the top block:
 ~~~~
-attributename attributevalue
-  attributename attributevalue
-  attributename attributevalue
+attributename  attributevalue
+  attributename  attributevalue
+  attributename  attributevalue
   newattributename  newattributevalue
-attributename attributevalue
-  attributename attributevalue
+attributename  attributevalue
+  attributename  attributevalue
 ~~~~
 After adding a new block (at the top)
 ~~~~
 newattributename  newattributevalue -- first element is set as a block header
-attributename attributevalue
-  attributename attributevalue
-  attributename attributevalue
-attributename attributevalue
-  attributename attributevalue
+attributename  attributevalue
+  attributename  attributevalue
+  attributename  attributevalue
+attributename  attributevalue
+  attributename  attributevalue
 ~~~~
 
 **Array** example:
 ~~~~
-ship      vega deluxe
+ship  vega deluxe
   ..weapons
-    laser cannon
-    plasma omnisphere
-    shuriken
+    .laser cannon
+    .plasma omnisphere
+    .shuriken
   engine  turbo
   ..colors
-    green and white
-    black and orange
-    matte black
-    radar-scrambling paint
+    .green and white
+    .black and orange
+    .matte black
+    .radar-scrambling paint
 ~~~~
 
 **Nested Object** example:
