@@ -104,19 +104,21 @@ function mass-getTopBlock ($file, $debug){
   $currentline = $filecontents[$i]
   while(!($currentline.StartsWith($global:DELIM))){
     if($debug){wr("Header: $i - $currentline"); wr("")} # debug
-    $temp = $currentline.Split($global:DELIM)[0]
+    $temp = [regex]::split($currentline, $global:DELIM)[0]
+    if($debug){wr("Header attribname: $temp"); wr("")} # debug
     $topBlock += $temp
-    $temp = $currentline.Split($global:DELIM)[1]
+    $temp = [regex]::split($currentline, $global:DELIM)[1]
     $topBlock += $temp
+    if($debug){wr("Header attribvalue: $temp"); wr("")} # debug
     $i++
     $currentline = ($filecontents[$i])
   }
   while($currentline.StartsWith($global:DELIM)){
     if($debug){wr("Non-header: $i - $currentline"); wr("")} # debug
     $currentLine = $currentLine.trim() # gets rid of the DELIM at the beginning of the line
-    $temp = $currentline.Split($global:DELIM)[0]
+    $temp = [regex]::split($currentline, $global:DELIM)[0]
     $topBlock += $temp
-    $temp = $currentline.Split($global:DELIM)[1]
+    $temp = [regex]::split($currentline, $global:DELIM)[1]
     $topBlock += $temp
     $i++
     $currentline = ($filecontents[$i])
