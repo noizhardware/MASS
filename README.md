@@ -5,6 +5,8 @@ _rev.2019g01_
 ##### TODO:
   * Atom Grammar
   * Implement in-file header definition for new user-defined delimiters and structures
+    - `#delimiter ::` sets `::` as a delimiter
+    - `#nospace` `#notab` to override default delimiters
   * Powershell module:
     - implement comments
   * make .js parser // array loader
@@ -13,18 +15,18 @@ _rev.2019g01_
     - direct function value pass
 ---  
 * Standard file extension is `.MASS`
-* Standard delimiter is `whitespace` or `TAB` (at least one, can be many, if necessary to enhance human-readability)ù
+* Standard delimiter is `whitespace` or `TAB` (at least one, can be many, if necessary to enhance human-readability)
   - I recommend using two `whitespace`, it keeps things tidy as a `TAB`, but is universally typable (it's difficult, if not impossible, to type a `TAB` on Android, for example)
 * Supports commenting, everything on the right of `--` is a comment `-- this is a comment`
 * Attribute names must NOT contain `whitespace` or `TAB` or `--`.
   - Attribute values, on the other hand, can contain anything. The attribute value ends with a `newline` or `-- comment`. An actual comment after the `--` is optional.
-* Lines beginning without `whitespace` or `TAB` are the header of a block.
-* Lines beginning with `whitespace` or `TAB` are contained in the parent block.
+* Lines beginning without `whitespace` or `TAB` are the header of an object. That's where the objects begins.
+* Lines beginning with `whitespace` or `TAB` are contained in the parent object.
 * Everything after the second `whitespace` or `TAB` and to the end of each line is the value of the attribute.
-* A line starting with `..` is an **array**.
-* A line starting with `...` is an **nested object**.
-* New blocks are usually added at the top of the file.
-* New elements are usually appended at the end of a block.
+* A line starting with `..` is an **array**, elements must start with `.`
+* A line starting with `...` is an **nested object**, its elements must start with `.`
+* New objects are usually added at the top of the file.
+* New elements are usually appended at the end of an object.
 
 _Examples:_
 
@@ -73,11 +75,17 @@ ship  vega deluxe
 ~~~~
 customername chthulu
   ...menu
-    starter     global madness
-    maincourse  blood and violence
-    side        sadism and torture
-    dessert     proton decay
+    .starter     global madness
+    .maincourse  blood and violence
+    .side        sadism and torture
+    .dessert     proton decay
   table             rooftop
   reservationtime   2100
-)
+~~~~
+
+An header's attributename can be used as **object name**, omitting the attributevalue
+~~~~
+objectname
+  any     thing
+  blabla  ectetera
 ~~~~
