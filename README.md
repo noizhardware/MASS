@@ -7,7 +7,7 @@ _rev.2019g01_
   * Atom Grammar
   * Implement in-file header definition for new user-defined delimiters and structures
     - `#delimiter ::` sets `::` as a delimiter
-    - `#nospace` `nonewline` to disable default delimiters
+    - `#nospace` `#nonewline` to disable default delimiters
   * Powershell module:
     - implement comments
   * make .js parser // array loader
@@ -19,7 +19,7 @@ _rev.2019g01_
 * Standard delimiter is `double whitespace`
   - `double whitespace` keeps things tidy as a `TAB`, but is universally typable (it's difficult, if not impossible, to type a `TAB` on Android, for example)
   - To enhance readability, I suggest you use a fixed number of letters for the _attribute name_
-    + You can use `#namelength` to declare a fixed length.
+    + You can use `#namelength` to declare a fixed length. (use it as an attribute name)
 * Supports commenting, everything on the right of `--` is a comment `-- this is a comment`
 * Attribute names must NOT contain `double whitespace` or `--`.
   - Attribute values, on the other hand, can contain anything. The attribute value ends with a `newline` or `-- comment`. An actual comment after the `--` is optional.
@@ -95,7 +95,7 @@ objectname
 
 Example usage of `#namelength`
 ~~~~
- #namelength 4
+ #namelength  4
  nam1  value
    nam2  value
    nam3  value
