@@ -31,7 +31,7 @@ function mass-initBlock (){ # block initialization - might be rendered useless i
 function mass-addToTOP ($file, $attribute, $value){ # adds an element to the top of the file
   $filecontents = Get-Content -path $file
   Clear-Content -path $file
-  if($global:header -eq 1){add-content -path $file -value "$attribute$global:TAB$value"; Add-Content -Path $file -Value ($filecontents); $global:header = 0} # makes an header if the header flag has been set, then resets the flag to 0
+  if($global:header -eq 1){add-content -path $file -value "$attribute$global:DELIM$value"; Add-Content -Path $file -Value ($filecontents); $global:header = 0} # makes an header if the header flag has been set, then resets the flag to 0
   else{ # element will be appended to the first block found from the top
     $i = 0
     $currentline = $filecontents[$i]
