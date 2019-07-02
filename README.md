@@ -6,7 +6,7 @@ _rev.2019g01_
   * Atom Grammar
   * Implement in-file header definition for new user-defined delimiters and structures
     - `#delimiter ::` sets `::` as a delimiter
-    - `#nospace` `#notab` to override default delimiters
+    - `#nospace` `#notab` `nonewline` to disable default delimiters
   * Powershell module:
     - implement comments
   * make .js parser // array loader
