@@ -1,6 +1,7 @@
 
 $global:outputstring = $null
 $global:TAB = "`t"
+$global:DELIM = "` ` "
 $global:header = 0
 
 $global:outputstring = $null
@@ -34,12 +35,12 @@ function mass-addToTOP ($file, $attribute, $value){ # adds an element to the top
   else{ # element will be appended to the first block found from the top
     $i = 0
     $currentline = $filecontents[$i]
-    while(($currentline.StartsWith($global:TAB))){$i++; $currentline = $filecontents[$i]}
+    while(($currentline.StartsWith($global:DELIM))){$i++; $currentline = $filecontents[$i]}
     add-content -path $file -value $filecontents[0..$i]
     $i++
     $currentline = $filecontents[$i]
-    while(($currentline.StartsWith($global:TAB))){add-content -path $file -value $currentline; $i++; $currentline = $filecontents[$i]}
-    add-content -path $file -value "$global:TAB$attribute$global:TAB$value"
+    while(($currentline.StartsWith($global:DELIM))){add-content -path $file -value $currentline; $i++; $currentline = $filecontents[$i]}
+    add-content -path $file -value "$global:DELIM$attribute$global:DELIM$value"
     add-content -path $file -value $filecontents[$i..($filecontents.count)]
   }
 }
@@ -86,14 +87,14 @@ function mass-swapBlock {
 $global:massElement = $null
 function mass-getLastBlock ($file){
   $filecontents = Get-Content -path $file
-  $currentline = $global:TAB
+  $currentline = $global:DELIM
   $i = 0
-  while($currentline.StartsWith($global:TAB)){$i++; $currentline = ($filecontents[($filecontents.count - $i)])}
+  while($currentline.StartsWith($global:DELIM)){$i++; $currentline = ($filecontents[($filecontents.count - $i)])}
   $elementfirstline = $filecontents[($filecontents.count - $i)]
   wr("Last block's first element: $elementfirstline")
   $i--
   $currentline = ($filecontents[($filecontents.count - $i)])
-  while($currentline.StartsWith($global:TAB) -AND ($filecontents[($filecontents.count - $i)])){$currentline = ($filecontents[($filecontents.count - $i)]); $toprint = $currentLine.trim(); wr($toprint); $i--}
+  while($currentline.StartsWith($global:DELIM) -AND ($filecontents[($filecontents.count - $i)])){$currentline = ($filecontents[($filecontents.count - $i)]); $toprint = $currentLine.trim(); wr($toprint); $i--}
 }
 
 function mass-getTopBlock ($file, $debug){
@@ -101,21 +102,21 @@ function mass-getTopBlock ($file, $debug){
   $filecontents = Get-Content -path $file
   $i = 0
   $currentline = $filecontents[$i]
-  while(!($currentline.StartsWith($global:TAB))){
+  while(!($currentline.StartsWith($global:DELIM))){
     if($debug){wr("Header: $i - $currentline"); wr("")} # debug
-    $temp = $currentline.Split($global:TAB)[0]
+    $temp = $currentline.Split($global:DELIM)[0]
     $topBlock += $temp
-    $temp = $currentline.Split($global:TAB)[1]
+    $temp = $currentline.Split($global:DELIM)[1]
     $topBlock += $temp
     $i++
     $currentline = ($filecontents[$i])
   }
-  while($currentline.StartsWith($global:TAB)){
+  while($currentline.StartsWith($global:DELIM)){
     if($debug){wr("Non-header: $i - $currentline"); wr("")} # debug
-    $currentLine = $currentLine.trim() # gets rid of the TAB at the beginning of the line
-    $temp = $currentline.Split($global:TAB)[0]
+    $currentLine = $currentLine.trim() # gets rid of the DELIM at the beginning of the line
+    $temp = $currentline.Split($global:DELIM)[0]
     $topBlock += $temp
-    $temp = $currentline.Split($global:TAB)[1]
+    $temp = $currentline.Split($global:DELIM)[1]
     $topBlock += $temp
     $i++
     $currentline = ($filecontents[$i])
@@ -133,19 +134,19 @@ function mass-test (){
   add-content -path $testfile -value $global:outputstring
   foreach ($currentline in $filecontents) # looping on array
   {
-    if($currentline.StartsWith("$global:TAB")){wr("tab found!")}
+    if($currentline.StartsWith("$global:DELIM")){wr("DELIM found!")}
     if($currentline.StartsWith("  ")){wr("space found!")}
   }
 }
 $global:outputstring = $null
-function mass-1tab ($inputstring){ # prepends a TAB to the input string
-  $global:outputstring = "$TAB$inputstring"
+function mass-1tab ($inputstring){ # prepends a DELIM to the input string
+  $global:outputstring = "$DELIM$inputstring"
 }
-function mass-2tab ($inputstring){ # prepends 2 TABs to the input string
-  $global:outputstring = "$TAB$TAB$inputstring"
+function mass-2tab ($inputstring){ # prepends 2 DELIMs to the input string
+  $global:outputstring = "$DELIM$DELIM$inputstring"
 }
-function mass-3tab ($inputstring){ # prepends 3 TABs to the input string
-  $global:outputstring = "$TAB$TAB$TAB$inputstring"
+function mass-3tab ($inputstring){ # prepends 3 DELIMs to the input string
+  $global:outputstring = "$DELIM$DELIM$DELIM$inputstring"
 }
 # M A S S  functions END.
 
