@@ -6,7 +6,7 @@ _rev.2019g01_
   * Atom Grammar
   * Implement in-file header definition for new user-defined delimiters and structures
     - `#delimiter ::` sets `::` as a delimiter
-    - `#nospace` `#notab` `nonewline` to disable default delimiters
+    - `#nospace` `nonewline` to disable default delimiters
   * Powershell module:
     - implement comments
   * make .js parser // array loader
@@ -15,14 +15,15 @@ _rev.2019g01_
     - direct function value pass
 ---  
 * Standard file extension is `.MASS`
-* Standard delimiter is `whitespace` or `TAB` (at least one, can be many, if necessary to enhance human-readability)
-  - I recommend using two `whitespace`, it keeps things tidy as a `TAB`, but is universally typable (it's difficult, if not impossible, to type a `TAB` on Android, for example)
+* Standard delimiter is `double whitespace`
+  - `double whitespace` keeps things tidy as a `TAB`, but is universally typable (it's difficult, if not impossible, to type a `TAB` on Android, for example)
+  - To enhance readability, I suggest you use a fixed number of letters for the _attribute name_
 * Supports commenting, everything on the right of `--` is a comment `-- this is a comment`
-* Attribute names must NOT contain `whitespace` or `TAB` or `--`.
+* Attribute names must NOT contain `double whitespace` or `--`.
   - Attribute values, on the other hand, can contain anything. The attribute value ends with a `newline` or `-- comment`. An actual comment after the `--` is optional.
-* Lines beginning without `whitespace` or `TAB` are the header of an object. That's where the objects begins.
-* Lines beginning with `whitespace` or `TAB` are contained in the parent object.
-* Everything after the second `whitespace` or `TAB` and to the end of each line is the value of the attribute.
+* Lines beginning without `double whitespace` are the header of an object. That's where the objects begins.
+* Lines beginning with `double whitespace` are contained in the parent object.
+* Everything after the second `double whitespace` and to the end of each line is the value of the attribute.
 * A line starting with `..` is an **array**, elements must start with `.`
 * A line starting with `...` is an **nested object**, its elements must start with `.`
 * New objects are usually added at the top of the file.
@@ -31,7 +32,7 @@ _rev.2019g01_
 _Examples:_
 
 ~~~~
-attributename attributevalue -- this is a block header
+attributename  attributevalue -- this is a block header
   attributename  attributevalue
   attributename  attributevalue
 attributename  attributevalue -- this one too
@@ -79,8 +80,8 @@ customername chthulu
     .maincourse  blood and violence
     .side        sadism and torture
     .dessert     proton decay
-  table             rooftop
-  reservationtime   2100
+  table  rooftop
+  reservationtime  2100
 ~~~~
 
 An header's attributename can be used as **object name**, omitting the attributevalue
