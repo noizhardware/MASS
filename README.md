@@ -18,8 +18,8 @@ _rev.2019g01_
 * Standard file extension is `.MASS`
 * Standard delimiter is `double whitespace`
   - `double whitespace` keeps things tidy as a `TAB`, but is universally typable (it's difficult, if not impossible, to type a `TAB` on Android, for example)
-  - To enhance readability, it-s good practice to use a fixed number of letters for the _attribute name_
-    + You can use `#namelength` to declare a fixed length. (use it as an attribute name)
+  - To enhance readability, it's good practice to use a fixed number of letters for the _attribute name_
+    + You can use `#namelength` to declare a fixed length. (use it as an attribute name at the beginning of the file)
 * Supports commenting, everything on the right of `--` is a comment `-- this is a comment`
 * Attribute names must NOT contain `double whitespace` or `--`.
   - Attribute values, on the other hand, can contain anything. The attribute value ends with a `newline` or `-- comment`. An actual comment after the `--` is optional.
