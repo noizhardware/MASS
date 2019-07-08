@@ -18,16 +18,16 @@ _rev.2019g01_
 * Standard file extension is `.MASS`
 * Standard delimiter is `double whitespace`
   - `double whitespace` keeps things tidy as a `TAB`, but is universally typable (it's difficult, if not impossible, to type a `TAB` on Android, for example)
-  - To enhance readability, I suggest you use a fixed number of letters for the _attribute name_
+  - To enhance readability, it-s good practice to use a fixed number of letters for the _attribute name_
     + You can use `#namelength` to declare a fixed length. (use it as an attribute name)
 * Supports commenting, everything on the right of `--` is a comment `-- this is a comment`
 * Attribute names must NOT contain `double whitespace` or `--`.
   - Attribute values, on the other hand, can contain anything. The attribute value ends with a `newline` or `-- comment`. An actual comment after the `--` is optional.
 * Lines beginning without `double whitespace` are the header of an object. That's where the objects begins.
-* Lines beginning with `double whitespace` are contained in the parent object.
+* Lines beginning with `double whitespace` are elements contained in the parent object.
 * Everything after the second `double whitespace` and to the end of each line is the value of the attribute.
-* A line starting with `..` is an **array**, elements must start with `.`
-* A line starting with `...` is an **nested object**, its elements must start with `.`
+* A line starting with `double whitespace` `..` is an **array**, elements must start with `four whitespace` `.`
+* A line starting with `double whitespace` `...` is an **nested object**, its elements must start with `four whitespace` `.`
 * New objects are usually added at the top of the file.
 * New elements are usually appended at the end of an object.
 
