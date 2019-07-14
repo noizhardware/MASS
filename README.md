@@ -7,7 +7,9 @@ _rev.2019g01_
   * Atom Grammar
   * Implement in-file header definition for new user-defined delimiters and structures
     - `#delimiter ::` sets `::` as a delimiter
+    - `#valsep ,` sets `,` as a separator inside value elements
     - `#nospace` `#nonewline` to disable default delimiters
+    - `#wrapvalue` `#wrapname` sets wrapping glyphs for attribute _name_ or _value_
   * Powershell module:
     - implement comments
   * make .js parser // array loader
@@ -100,4 +102,10 @@ Example usage of `#namelength`
    nam2  value
    nam3  value
    othe  value
+~~~~
+
+Example usage of `#valsep`
+~~~~
+ #valsep ,
+ thingname  something,other thing,that thing,this,foo
 ~~~~
