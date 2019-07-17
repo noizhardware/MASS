@@ -1,7 +1,7 @@
 # M A S S
 _rev.2019g17_
 
-🔴 CAUTION!!! This format is a work-in-progress 🔴
+🔴 CAUTION!!! This file format is a work-in-progress 🔴
 ---
 #### .MASS is a file format that uses human-readable delimiter-separated values to store data in attribute–value pairs.
 ###### In the `src` folder you can find a PowerShell module with functions that act upon the .MASS format.
