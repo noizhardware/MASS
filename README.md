@@ -5,8 +5,8 @@ _rev.2019g17_
 ---
 #### .MASS is a file format that uses human-readable delimiter-separated values to store data in attribute–value pairs.
 ###### In the `src` folder you can find a PowerShell module with functions that act upon the .MASS format.
-##### TODO:
-  * Any non-js parser must ignore the .js object header
+#### TODO:
+  * Any non-js parser must ignore the .js object header and footer
   * Atom Grammar
   * Implement in-file header definition for new user-defined delimiters and structures
     - `#delimiter ::` sets `::` as a delimiter
