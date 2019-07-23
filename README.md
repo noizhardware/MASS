@@ -1,5 +1,5 @@
 # M A S S
-_rev.2019g17_
+_rev.2019g23_
 
 🔴 WARNING!!! These file format specs are a work-in-progress 🔴
 ---
@@ -30,6 +30,7 @@ _rev.2019g17_
 * Attribute names must NOT contain `double whitespace` or `--`.
   - Attribute values, on the other hand, can contain anything. The attribute value ends with a `newline` or `-- comment`. An actual comment after the `--` is optional.
 * Lines beginning without `double whitespace` are the header of an object. That's where the objects begins.
+  - Thus objects have no names. The first element is the header of the object itself.
 * Lines beginning with `double whitespace` are elements contained in the parent object.
 * Everything after the second `double whitespace` and to the end of each line is the value of the attribute.
 * A line starting with `double whitespace` `..` is an **array**, elements must start with `four whitespace` `.`
@@ -57,7 +58,7 @@ attributename  attributevalue
 ~~~~
 After adding a new block (at the top)
 ~~~~
-newattributename  newattributevalue -- first element is set as a block header
+newattributename  newattributevalue -- first element is always set as a block header
 attributename  attributevalue
   attributename  attributevalue
   attributename  attributevalue
