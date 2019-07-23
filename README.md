@@ -3,7 +3,7 @@ _rev.2019g17_
 
 🔴 WARNING!!! These file format specs are a work-in-progress 🔴
 ---
-#### .MASS is a file format that uses human-readable delimiter-separated values to store data in attribute–value pairs.
+#### .MASS is an extensible database file format that uses human-readable delimiter-separated values to store data in attribute–value pairs and arrays.
 ###### In the `src` folder you can find a PowerShell module with functions that act upon the .MASS format.
 #### TODO:
   * Any non-js parser must ignore the .js object header and footer
@@ -19,6 +19,7 @@ _rev.2019g17_
     - with drag&drop
     - with address #hash reader
     - direct function value pass
+  * x-dimensional arrays
 ---  
 * Standard file extension is `.MASS`
 * Standard delimiter is `double whitespace`
