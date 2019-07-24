@@ -20,6 +20,7 @@ _rev.2019g23_
     - with address #hash reader
     - direct function value pass
   * x-dimensional arrays
+  * split repo per language and add repos via github modules
 ---  
 * Standard file extension is `.MASS`
 * Standard delimiter is `double whitespace`
