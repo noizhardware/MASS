@@ -34,6 +34,7 @@ _rev.2019g23_
   - Thus objects have no names. The first element is the header of the object itself.
 * Lines beginning with `double whitespace` are elements contained in the parent object.
 * Everything after the second `double whitespace` and to the end of each line is the value of the attribute.
+* multi-line attribute _values_ are possible, each new line must be indented with `four whitespace`
 * A line starting with `double whitespace` `..` is an **array**, elements must start with `four whitespace` `.`
 * A line starting with `double whitespace` `...` is an **nested object**, its elements must start with `four whitespace` `.`
 * New objects are usually added at the top of the file.
@@ -65,6 +66,28 @@ attributename  attributevalue
   attributename  attributevalue
 attributename  attributevalue
   attributename  attributevalue
+~~~~
+
+Multi-line attribute value:
+~~~~
+attname  attval
+  attname  this is the value, it can be multi-line.
+    This is the continuation of the same value as above, indented of 4 whitespace.
+    Makes decent journaling possible!
+  anotherattname  another attribute value
+  etcetc  bla bla
+~~~~
+Another example:
+~~~~
+2020a30  
+    Entry. Here I'm "misusing" the format, to obtain a more compact form.
+    I'm using the main attribute name as "DATE" attribute value,
+    and its attribute value as the actual journal entry.
+    I like it that it's possible to bend the format.
+    This is still valid .MASS format, but can be used for a purpose-specific application.
+    And still, you can use the same parser to read it.
+2020a31  
+    another entry. (note the trailing twospace in the line above!)
 ~~~~
 
 **Array** example:
